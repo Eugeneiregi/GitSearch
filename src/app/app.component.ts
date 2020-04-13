@@ -6,6 +6,7 @@ import { GithubService } from './services/github/github.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  [x: string]: any;
   title = 'Gitsearch';
   users: any = [];
 
@@ -15,6 +16,9 @@ export class AppComponent implements OnInit {
       this.githubService.getUsers().subscribe((users) => {
         this.users = users;
         console.log(this.users);
+      });
+      this.githubService.getUser('Eugeneiregi').subscribe((user) => {
+        console.log(this.user);
       });
    }
 }

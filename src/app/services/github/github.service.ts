@@ -6,10 +6,14 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class GithubService {
-    url = 'https://api.github.com/users';
+    // tslint:disable-next-line: no-inferrable-types
+    url: string = 'https://api.github.com/users';
   constructor(private http: HttpClient) { }
 
   getUsers(): Observable<any> {
     return this.http.get<any>('${this.url}');
+  }
+  getUser(username: string): Observable<any> {
+    return this.http.get('${this.url}/${username}');
   }
 }
