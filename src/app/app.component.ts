@@ -7,10 +7,14 @@ import { GithubService } from './services/github/github.service';
 })
 export class AppComponent implements OnInit {
   title = 'Gitsearch';
+  users: any = [];
 
   constructor(private githubService: GithubService) { }
 
    ngOnInit() {
-
+      this.githubService.getUsers().subscribe((users) => {
+        this.users = users;
+        console.log(this.users);
+      });
    }
 }
