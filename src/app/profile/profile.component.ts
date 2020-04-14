@@ -10,12 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
    profile;
+   repos: any[];
 
 
   constructor(private profileService: ProfileService) {
     this.profileService.getProfileInfo().subscribe(profile => {
           console.log(profile);
           this.profile = profile;
+    });
+    this.profileService.getProfileRepos().subscribe(profile => {
+      console.log();
+      this.repos = this.repos;
     });
   }
 
