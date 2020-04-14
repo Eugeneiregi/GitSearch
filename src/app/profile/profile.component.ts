@@ -9,9 +9,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-   profile;
-   repos;
-   username: string;
+   profile: any;
+   repos: any;
+   username: any = 'Eugeneiregi';
 
 
   constructor(private profileService: ProfileService) {
@@ -29,9 +29,11 @@ export class ProfileComponent implements OnInit {
   console.log();
   this.repos = repos;
 });
+
   }
 
   ngOnInit(): void {
+    this.findProfile();
   }
 
 }
