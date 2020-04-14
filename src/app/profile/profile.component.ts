@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
    profile;
-   repos: any[];
+   repos;
 
 
   constructor(private profileService: ProfileService) {
@@ -18,9 +18,9 @@ export class ProfileComponent implements OnInit {
           console.log(profile);
           this.profile = profile;
     });
-    this.profileService.getProfileRepos().subscribe(profile => {
+    this.profileService.getProfileRepos().subscribe(repos => {
       console.log();
-      this.repos = this.repos;
+      this.repos = repos;
     });
   }
 
