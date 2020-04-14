@@ -1,1 +1,9 @@
-<p>Hellow World!</p>
+<p>Hellow !</p>
+<p>Karra</p>
+<div *ngIf="profile">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+         {{profile.name}} <small>({{profile.login}})</small>
+    </div>
+  </div>
+</div>
