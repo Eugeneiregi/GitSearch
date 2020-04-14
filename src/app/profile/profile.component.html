@@ -6,6 +6,30 @@
          {{profile.name}} <small>({{profile.login}})</small>
          {{profile.location}}
     </div>
-    <div class="panel-body"></div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-sm-3">
+          <img src="{{profile.avatar_url}}" class="img-cicle img-responsive" alt="Profile Image">
+        </div>
+        <div class="col-sm-5">
+            <ul class="list-group">
+              <li class="list-group-item" *ngIf="profile.bio">{{profile.bio}}</li>
+              <li class="list-group-item" *ngIf="profile">Availabe for hire</li>
+              <li class="list-group-item" *ngIf="profile">eugeneregi2019@gmail.com</li>
+              <li class="list-group-item" *ngIf="profile.bio">{{profile.followers}}</li>
+            </ul>
+        </div>
+        <div class="col-sm-3">
+          <div>
+            <p>
+              <span class="label label-default">{{profile.followers}} Followers</span>
+              <span class="label label-primary">Following {{ profile.following }}</span>
+              <span class="label label-success">{{profile.public_gists}} Public gists</span>
+              <span class="label label-info">{{profile.public_repos}} Repos</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
